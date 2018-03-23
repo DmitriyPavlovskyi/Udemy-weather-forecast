@@ -6,12 +6,10 @@ import reducers from './root/reducer';
 
 import Root from './root/app';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <div>
-      <Root />
-    </div>
+    <Root />
   </Provider>
   , document.querySelector('.container'));
