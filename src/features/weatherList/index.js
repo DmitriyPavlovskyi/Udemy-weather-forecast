@@ -15,22 +15,19 @@ class WeatherList extends Component {
     });
 
     return (
-      <div>
         <table className="table table-hover">
           <thead>
             <tr>
               <th>City</th>
-              <th>Temperature</th>
-              <th>Pressure</th>
-              <th>Humidity</th>
+              <th>Temperature (C)</th>
+              <th>Pressure (hPa)</th>
+              <th>Humidity (%)</th>
             </tr>
           </thead>
-
           <tbody>
             {citiesList}
           </tbody>
         </table>
-      </div>
     );
   }
 }

@@ -1,19 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
+import Chart from './chart';
+import '../styles.css';
 
 function WeatherItem(props) {
   const name = props.data.city.name;
-  const temps = props.data.list.map(weather => weather.main.temp);
+  const temps = _.map(props.data.list.map(weather => weather.main.temp), (temp) => temp - 273);
+  const pressures = props.data.list.map(weather => weather.main.pressure);
+  const humidities = props.data.list.map(weather => weather.main.humidity);
 
   return (
     <tr>
-      <td>{name}</td>
-      <td>
-        <Sparklines height={150} width={300} data={temps}>
-          <SparklinesLine color="blue"/>
-          <SparklinesReferenceLine type="mean" />
-        </Sparklines>
+      <th className="align-middle">{name}</th>
+      <td className="chart-cell">
+        <Chart data={temps} color="blue" units="C" />
+      </td>
+      <td className="chart-cell">
+        <Chart data={pressures} color="orange" units="hPa" />
+      </td>
+      <td className="chart-cell">
+        <Chart data={humidities} color="green" units="%" />
       </td>
 
     </tr>
