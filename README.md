@@ -1,7 +1,7 @@
 # React app
 
 ### Using:
-React, redux
+React, redux, sparklines API, google maps API, axios
 
 #### Commands
 
