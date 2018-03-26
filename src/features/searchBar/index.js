@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchWeather } from './AC/fetchWeather';
+import './styles.css';
 
 class SearchBar extends Component {
   constructor(props) {
